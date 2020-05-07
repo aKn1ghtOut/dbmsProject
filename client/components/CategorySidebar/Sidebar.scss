@@ -1,0 +1,65 @@
+@import "../../../includes/sass/mixins.scss";
+
+#categorySidebar
+{
+	font-size: 30px;
+	flex-basis: 300px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	top: 0;
+	position: sticky;
+
+	a.category
+	{
+		padding: 20px;
+		background-color: #00000000;
+		transition-duration: 0.2s;
+		font-size: 18px;
+		line-height: 1;
+		cursor: pointer;
+		display: block;
+		color: black;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-align: left;
+		margin: 10px 0;
+		// border: {
+		// 	left: none;
+		// 	top: none;
+		// 	right: 1px solid rgba(0,0,0,.13);
+		// 	bottom: 1px dashed rgba(0,0,0,.13);
+		// };
+
+		border-radius: 10px;
+
+		&:last-child
+		{
+			border-bottom: none;
+		}
+
+		span
+		{
+			position: relative;
+			margin: 0;
+			transform: none;
+			transition: all 0.3s ease-in-out;
+		}
+
+		&:hover, &.onHere
+		{
+			background: rgba(153,153,153, 0.1);
+			background-color: linear-gradient(90deg, rgba(153,153,153,0.7567401960784313) 0%, rgba(199,199,199,0.5578606442577031) 65%, rgba(255,255,255,0) 100%);
+			color: var(--theme-blue);
+
+			span
+			{
+				margin-left: 20px;
+			}
+		}
+		
+		svg
+		{
+			float: right;
+		}
+	}
+}

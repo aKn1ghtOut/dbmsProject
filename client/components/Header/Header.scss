@@ -1,0 +1,62 @@
+@import "../../../includes/sass/mixins.scss";
+
+nav#site-header
+{
+	margin: 0;
+	padding: 50px 20px;
+	display: flex;
+	width: 100%;
+	background-color: #00000000 !important;
+
+	@include respond-to("large")
+	{
+		padding: {
+			left: calc(50vw - 770px);
+			right: calc(50vw - 770px);
+		};
+	}
+
+	>*{
+		vertical-align: middle;
+	}
+
+	>a
+	{
+		flex: 1;
+		font-size: 40px;
+		text-transform: uppercase;
+		font-family: 'Anton', sans-serif;
+		color: #277fab;
+		text-align: left;
+	}
+
+	#navbarSupportedContent
+	{
+		flex: 2;
+		justify-content: end;
+		text-align: right;
+
+		>form
+		{
+			display: flex;
+			width: 100%;
+			justify-content: end;
+
+			>input
+			{
+				flex: 66%;
+				flex-grow: 1;
+			}
+
+			>button
+			{
+				flex-grow: 0;
+			}
+		}
+	}
+
+	&>div:nth-child(4)
+	{
+		flex: 1;
+	}
+}
