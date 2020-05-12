@@ -34,7 +34,7 @@ const OrderPage = React.memo(({ orders }) => {
 			{
 				orders.map(item => (
 					<div key={item._id} className="col-sm-12 col-md-6 col-lg-4 d-sm-block d-md-inline-block order-item">
-						<h2>Date: {item.datetime.toString()}</h2>
+						<h2>Date: {new Date(item.datetime.toString()).toLocaleString()}</h2>
 						<table className="items-cont">
 							<tbody>
 								<tr>

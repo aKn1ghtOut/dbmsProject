@@ -11,10 +11,23 @@ class Header extends Component
 	constructor(props)
 	{
 		super(props);
+
+		this.search = this.search.bind(this);
+		this.searchQuery = React.createRef();
 	}
 
 	state = {
 	};
+
+	search(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+
+		const val = this.searchQuery.current.value;
+
+		this.props.history.push(`/s/${val}`);
+	}
 
 	render()
 	{
@@ -27,8 +40,8 @@ class Header extends Component
 
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<form className="form-inline my-2 my-lg-0">
-				<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ref={this.searchQuery}/>
+				<button className="btn btn-outline-success my-2 my-sm-0" onClick={this.search}>Search</button>
 				</form>
 			</div>
 			<AccountMenu/>

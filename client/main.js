@@ -16,6 +16,7 @@ import VendorPageContainer from './views/Vendor';
 import EditProductPageContainer from './views/Vendor/editProduct';
 import CartPageContainer from './views/Cart';
 import OrderPageContainer from './views/Orders';
+import SearchPageContainer from './views/Search';
 
 const appHistory = createBrowserHistory();
 
@@ -26,6 +27,7 @@ const App = () => (
 			<Route path="/" exact component={HomePage} />
 			<Route path="/c/:category" component={HomePage}/>
 			<Route path="/p/:id" component={ProductContainer}/>
+			<Route path="/s/:query" component={SearchPageContainer}/>
 			<Route path="/getin" exact component={GetinPage}/>
 			<Route path="/cart" exact component={CartPageContainer}/>
 			<Route path="/orders" exact component={OrderPageContainer}/>

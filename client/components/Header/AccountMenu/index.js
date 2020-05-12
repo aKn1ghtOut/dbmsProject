@@ -41,7 +41,7 @@ class AccountMenu extends Component
 					""
 				}
 			</div>
-			<h2>{ Meteor.userId() ? (Meteor.user() ? Meteor.user().name : "Account") : <Link to="/getin">Login / Sign Up</Link> }</h2>
+			<h2>{ Meteor.userId() ? (Meteor.user() ? Meteor.user().name : "Account") : <Link to="/getin">Login</Link> }</h2>
 		</div>
 		);
 	}

@@ -4,7 +4,7 @@ import { FilesCollection } from 'meteor/ostrio:files';
 const Images = new FilesCollection({
   collectionName: 'Images',
   allowClientCode: false, // Disallow remove files from Client
-  storagePath: (Meteor.isDevelopment ? "../../../../../assets/" : "../../assets/"),
+  storagePath: (Meteor.isDevelopment ? "../../../../../assets/" : "../../../assets/"),
   onBeforeUpload(file) {
 
     console.log({userId: this.userId, file});

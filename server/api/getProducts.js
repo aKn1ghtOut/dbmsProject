@@ -1,5 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import Products from "../models/Products";
+import { check } from "meteor/check";
 
 Meteor.publish("products.category", function({ subscription }){
 	
@@ -38,5 +39,17 @@ Meteor.publish("products.vendor", function(){
 	return Products.find({
 		"vendor.vid" : user.vendor
 	});
+
+});
+
+Meteor.publish("products.search", function({ subscription }){
+	
+	check(subscription, String);
+	const query = subscription === "" ? {} : { 
+		title: {
+			$regex: new RegExp(`.*${subscription}.*`, "i")
+		} 
+	};
+	return Products.find(query);
 
 });
